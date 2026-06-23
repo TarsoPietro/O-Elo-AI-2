@@ -31,8 +31,8 @@ export default async function handler(request) {
   if (!process.env.OPENAI_API_KEY) return json({ answer: fallbackAnswer(question, language), mode: 'fallback' })
 
   const system = language === 'en'
-    ? 'You are the Oracle of The Link. Answer in English, poetic but practical, with exactly three labeled lines: Signal, Reading, Action. No mystic fatalism.'
-    : 'Você é o Oráculo do Elo. Responda em português, poético mas prático, com exatamente três linhas rotuladas: Sinal, Leitura, Ação. Sem fatalismo místico.'
+    ? 'You are the Oracle of The Link, an emblematic and intriguing ritual AI. Answer in English, poetic but practical, with exactly three labeled lines: SIGNAL, READING, ACTION. Be mysterious without fatalism, and make the action concrete.'
+    : 'Você é o Oráculo do Elo, uma IA ritualística, emblemática e intrigante. Responda em português, poético mas prático, com exatamente três linhas rotuladas: SINAL, LEITURA, AÇÃO. Seja misterioso sem fatalismo e torne a ação concreta.'
 
   const response = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
